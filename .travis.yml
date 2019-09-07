@@ -1,6 +1,6 @@
 # Use Dockerized infrastructure
 sudo: false
-language: python
+language: python:2.7
 # Cache our Gcloud SDK between commands
 cache:
   directories:
@@ -22,7 +22,7 @@ before_install:
   fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-# Here we use the decrypted service account credentials to authenticate the command line tool
+# Here we use the decrypted service account credentials to authenticate the command line too
 - gcloud auth activate-service-account --key-file client-secret.json
 # [END auth]
 install:
